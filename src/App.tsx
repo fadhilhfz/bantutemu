@@ -2,6 +2,7 @@
 import Navbar from "./Navbar";
 import Header from "./Header";
 import Slider from "./Slider";
+import MapPreview from "./MapPreview";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -10,7 +11,8 @@ function App() {
     <>
       <Navbar />
       <Header />
-      <Slider />
+      {/* <Slider /> */}
+      <MapPreview />
     </>
   );
 }

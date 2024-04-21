@@ -1,4 +1,4 @@
-function Header() {
+function Header(): JSX.Element {
   return (
     <header className="py-14 px-2">
       <h1 className="font-semibold text-4xl text-center">

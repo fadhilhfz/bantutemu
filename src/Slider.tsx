@@ -1,4 +1,4 @@
-function Slider() {
+function Slider(): JSX.Element {
   return (
     <section className="bg-slate-300 py-4 flex gap-4 justify-evenly pt-6">
       <div className="h-48">Image 1</div>

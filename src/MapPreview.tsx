@@ -1,13 +1,30 @@
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+  Marker,
+  Popup,
+  useMapEvent,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-function MapPreview(): JSX.Element {
+function HandleOnLoad() {
+  const map = useMapEvent("load", () => {
+    map.flyTo({ lat: 51.505, lng: -0.09 }, 18);
+  });
+
+  console.log("fired");
+  return null;
+}
+
+function MapPreview() {
   return (
     <MapContainer
       center={[51.505, -0.09]}
-      zoom={13}
+      zoom={10}
       scrollWheelZoom={false}
       className="h-64"
+      zoomControl={false}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -18,6 +35,8 @@ function MapPreview(): JSX.Element {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
+
+      <HandleOnLoad />
     </MapContainer>
   );
 }

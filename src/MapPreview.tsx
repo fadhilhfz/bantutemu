@@ -9,11 +9,9 @@ import {
 import "leaflet/dist/leaflet.css";
 
 function HandleOnLoad() {
-  const map = useMapEvent("load", () => {
-    map.flyTo({ lat: 51.505, lng: -0.09 }, 18);
-  });
+  const map = useMap();
+  map.flyTo({ lat: 51.505, lng: -0.09 }, 18);
 
-  console.log("fired");
   return null;
 }
 
@@ -21,7 +19,7 @@ function MapPreview() {
   return (
     <MapContainer
       center={[51.505, -0.09]}
-      zoom={10}
+      zoom={12}
       scrollWheelZoom={false}
       className="h-64"
       zoomControl={false}

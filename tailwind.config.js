@@ -5,7 +5,18 @@ export default {
     fontFamily: {
       sans: ["Quicksand"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        fadeInOut: "2s ease infinite fadeInOut",
+      },
+      keyframes: {
+        fadeInOut: {
+          "0%": { opacity: 0 },
+          "50%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
+    },
   },
   plugins: [],
 };
